@@ -1,0 +1,18 @@
+[workspace]
+authors = ["Rafail <rafailadam46@gmail.com>"]
+channels = ["conda-forge"]
+name = "causal"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.12.*"
+
+[pypi-dependencies]
+dowhy = ">=0.13, <0.14"
+econml = ">=0.16.0, <0.17"
+ipykernel = ">=6.30.1, <7"
+pynvim = ">=0.5.2, <0.6"
+causal-learn = ">=0.1.4.3, <0.2"

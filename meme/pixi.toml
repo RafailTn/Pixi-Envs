@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Rafail <rafailadam46@gmail.com>"]
+channels = ["conda-forge", "bioconda"]
+name = "meme"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+meme = ">=5.5.8,<6"

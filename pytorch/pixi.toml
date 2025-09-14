@@ -1,0 +1,22 @@
+[workspace]
+authors = ["Rafail <rafailadam46@gmail.com>"]
+channels = ["conda-forge"]
+name = "pytorch"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.13.5,<3.14"
+pandas = ">=2.3.1,<3"
+
+[pypi-dependencies]
+pytorch-lightning = ">=2.5.2, <3"
+scikit-learn = ">=1.7.1, <2"
+pyclustering = ">=0.10.1.2, <0.11"
+biopython = ">=1.85, <2"
+optuna = ">=4.4.0, <5"
+ipykernel = ">=6.30.1, <7"
+pynvim = ">=0.5.2, <0.6"
+stable-baselines3 = { version = ">=2.7.0, <3", extras = ["extra"] }

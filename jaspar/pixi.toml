@@ -1,0 +1,13 @@
+[workspace]
+authors = ["Rafail <rafailadam46@gmail.com>"]
+channels = ["conda-forge", "bioconda"]
+name = "jaspar"
+platforms = ["osx-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+pyjaspar = ">=3.0.0,<4"
+bedtools = ">=2.31.1,<3"
+homer = ">=4.10,<5"

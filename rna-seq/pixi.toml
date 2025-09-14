@@ -1,0 +1,21 @@
+[workspace]
+authors = ["Rafail <rafailadam46@gmail.com>"]
+channels = ["conda-forge", "bioconda"]
+name = "rna-seq"
+platforms = ["osx-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+hisat2 = "*"
+trim-galore = "*"
+samtools = "*"
+bedtools = "*"
+picard = "*"
+stringtie = "*"
+sra-tools = ">=3.2.1,<4"
+
+[pypi-dependencies]
+ipykernel = ">=6.30.1, <7"
+pynvim = ">=0.5.2, <0.6"
