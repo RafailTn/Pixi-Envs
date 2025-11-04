@@ -1,0 +1,20 @@
+[workspace]
+channels = ["conda-forge", "bioconda"]
+name = "rna-seq"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+star = "*"
+trim-galore = "*"
+samtools = "*"
+bedtools = "*"
+picard = "*"
+stringtie = "*"
+sra-tools = "*"
+
+[pypi-dependencies]
+ipykernel = "*"
+pynvim = "*"

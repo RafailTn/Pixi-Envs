@@ -1,0 +1,55 @@
+[workspace]
+name = "scrna"
+version = "0.1.0"
+description = "Single-cell RNA-seq analysis workspace"
+channels = ["conda-forge", "bioconda"]
+platforms = ["linux-64"]
+
+[dependencies]
+# Core analysis
+python = "*"
+scanpy = "*"
+anndata = "*"
+scvi-tools = "*"
+
+# Preprocessing
+scrublet = "*"
+scipy = "*"
+scikit-learn = "*"
+
+# Visualization
+matplotlib = "*"
+seaborn = "*"
+plotly = "*"
+napari = "*"  # for interactive visualization
+
+# Cell type annotation
+celltypist = "*"
+scarches = "*"
+
+# Differential expression
+pydeseq2 = "*"
+
+# Trajectory & dynamics
+scvelo = "*"
+cellrank = "*"
+
+# Gene regulatory networks
+pyscenic = "*"
+decoupler = "*"
+
+# Utilities
+pandas = "*"
+numpy = "*"
+jupyter = "*"
+jupyterlab = "*"
+ipykernel = "*"
+
+# Quality control
+leidenalg = "*"
+python-igraph = "*"
+
+# Optional but useful
+harmonypy = "*"  # batch correction alternative
+squidpy = "*"    # spatial analysis
+muon = "*"       # multimodal analysis

@@ -1,0 +1,19 @@
+[workspace]
+channels = ["conda-forge"]
+name = "causal"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.12.*"
+
+[pypi-dependencies]
+pywhy = "*"
+econml = "*"
+causal-learn = "*"
+catenets = "*"
+gcastle = "*"
+ipykernel = "*"
+pynvim = "*"

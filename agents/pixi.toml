@@ -1,0 +1,39 @@
+[workspace]
+channels = ["conda-forge"]
+name = "agents"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "<3.14"
+
+[pypi-dependencies]
+langchain-chroma = "*"
+torch = "*"
+langgraph = "*"
+langchain = "*"
+langchain-ollama = "*"
+langgraph-cli = "*"
+ipykernel = "*"
+langchain-tavily = "*"
+langchain-core = "*"
+trustcall = "*"
+langchain-community = "*"
+biopython = "*"
+langgraph-sdk = "*"
+langgraph-prebuilt = "*"
+pynvim = "*"
+langsmith = "*"
+dspy = "*"
+langgraph-supervisor = "*"
+langgraph-swarm = "*"
+agentevals = "*"
+langchain-mcp-adapters = "*"
+langmem = "*"
+langchain-experimental = "*"
+langchain-huggingface = "*"
+deepagents = ">=0.2.0, <0.3"
+langchain-classic = ">=1.0.0, <2"
+sentence-transformers = ">=5.1.2, <6"
