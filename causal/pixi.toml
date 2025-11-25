@@ -8,6 +8,7 @@ version = "0.1.0"
 
 [dependencies]
 python = "3.12.*"
+polars = ">=1.35.1,<2"
 
 [pypi-dependencies]
 pywhy = "*"
@@ -17,3 +18,4 @@ catenets = "*"
 gcastle = "*"
 ipykernel = "*"
 pynvim = "*"
+fastexcel = ">=0.18.0, <0.19"

@@ -53,3 +53,9 @@ python-igraph = "*"
 harmonypy = "*"  # batch correction alternative
 squidpy = "*"    # spatial analysis
 muon = "*"       # multimodal analysis
+
+[pypi-dependencies]
+fastexcel = ">=0.18.0, <0.19"
+ipykernel = "*"
+pynvim = ">=0.6.0, <0.7"
+polars = ">=1.35.2, <2"

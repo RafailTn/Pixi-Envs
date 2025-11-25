@@ -25,3 +25,8 @@ samtools = "*"
 multiqc = "*"
 cooltools = "*"
 pairtools = ">=0.3.0,<0.4"
+
+[pypi-dependencies]
+fastexcel = ">=0.16.0, <0.17"
+ipykernel = ">=6.31.0, <7"
+pynvim = ">=0.6.0, <0.7"
