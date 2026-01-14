@@ -1,0 +1,25 @@
+[workspace]
+authors = ['RafailTn <rafailadam46@gmail.com>']
+channels = ['conda-forge']
+name = "autogluon-gpu"
+platforms = ["linux-64"]  # or "win-64" for Windows
+
+[dependencies]
+python = ">=3.10,<3.13"  # PyTorch doesn't fully support 3.13 yet
+cuda = "12.8.*"
+
+[pypi-dependencies]
+# PyTorch with CUDA 12.8 for Blackwell support
+torch = { version = ">=2.7.0", index = "https://download.pytorch.org/whl/cu128" }
+torchvision = { version = ">=0.22.0", index = "https://download.pytorch.org/whl/cu128" }
+torchaudio = { version = ">=2.7.0", index = "https://download.pytorch.org/whl/cu128" }
+
+# AutoGluon (must come from PyPI since torch is from PyPI)
+autogluon = "*" 
+autogluon-tabular = { version = ">=1.4.0, <2", extras = ["tabicl", "tabpfn", "mitra"] }
+polars = ">=1.35.2, <2"
+fastexcel = ">=0.18.0, <0.19"
+ipykernel = ">=7.1.0, <8"
+pynvim = ">=0.6.0, <0.7"
+xlsxwriter = ">=3.2.9, <4"
+plotly = {version="*", extras=["express"]}
