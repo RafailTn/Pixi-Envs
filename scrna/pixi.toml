@@ -1,0 +1,26 @@
+[workspace]
+authors = ["RafailTn <rafailadam46@gmail.com>"]
+channels = ["conda-forge", "bioconda"]
+name = "scrna"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "*"
+alevin-fry = "*"
+simpleaf = "*"
+scvelo = ">=0.3.3,<0.4"
+pydeseq2 = ">=0.5.4,<0.6"
+decoupler-py = ">=2.1.4,<3"
+
+[pypi-dependencies]
+scanpy = "*"
+leidenalg = "*"
+igraph = "*"
+celltypist = "*"
+polars = "*"
+pynvim = "*"
+ipykernel = "*"
+
