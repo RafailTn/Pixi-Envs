@@ -14,6 +14,11 @@ simpleaf = "*"
 scvelo = ">=0.3.3,<0.4"
 pydeseq2 = ">=0.5.4,<0.6"
 decoupler-py = ">=2.1.4,<3"
+cellrank = ">=2.0.7,<3"
+scvi-tools = ">=1.4.1,<2"
+harmonypy = ">=0.2.0,<0.3"
+muon = ">=0.1.7,<0.2"
+scarches = ">=0.6.1,<0.7"
 
 [pypi-dependencies]
 scanpy = "*"
@@ -23,4 +28,5 @@ celltypist = "*"
 polars = "*"
 pynvim = "*"
 ipykernel = "*"
-
+torch-geometric = ">=2.7.0, <3"
+captum = ">=0.8.0, <0.9"
