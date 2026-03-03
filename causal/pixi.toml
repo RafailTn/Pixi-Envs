@@ -1,4 +1,5 @@
 [workspace]
+authors = ["RafailTn <rafailadam46@gmail.com>"]
 channels = ["conda-forge"]
 name = "causal"
 platforms = ["linux-64"]
@@ -7,15 +8,11 @@ version = "0.1.0"
 [tasks]
 
 [dependencies]
-python = "3.12.*"
-polars = ">=1.35.1,<2"
+python = '>=3.13, <3.14'
 
 [pypi-dependencies]
-pywhy = "*"
-econml = "*"
-causal-learn = "*"
-catenets = "*"
-gcastle = "*"
-ipykernel = "*"
-pynvim = "*"
-fastexcel = ">=0.18.0, <0.19"
+dowhy = ">=0.14, <0.15"
+pynvim = ">=0.6.0, <0.7"
+ipykernel = ">=7.2.0, <8"
+econml = ">=0.16.0, <0.17"
+causal-learn = ">=0.1.4.4, <0.2"
