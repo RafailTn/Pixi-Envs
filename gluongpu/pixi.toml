@@ -23,3 +23,5 @@ ipykernel = ">=7.1.0, <8"
 pynvim = ">=0.6.0, <0.7"
 xlsxwriter = ">=3.2.9, <4"
 plotly = {version="*", extras=["express"]}
+featurewiz = ">=0.5.82, <0.6"
+kaleido = ">=1.2.0, <2"
