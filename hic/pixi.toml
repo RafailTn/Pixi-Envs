@@ -24,7 +24,10 @@ bowtie2 = "*"
 samtools = "*"
 multiqc = "*"
 cooltools = "*"
-pairtools = ">=0.3.0,<0.4"
+pairtools = ">=1.1.1,<2"
+trim-galore = ">=2.3.0,<3"
+fastqc = ">=0.12.1,<0.13"
+pygenometracks = ">=3.9,<4"
 
 [pypi-dependencies]
 fastexcel = ">=0.16.0, <0.17"

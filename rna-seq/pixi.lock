@@ -1,6 +1,11 @@
 version: 7
 platforms:
 - name: linux-64
+  virtual-packages:
+  - __unix=0=0
+  - __linux=4.18
+  - __glibc=2.28
+  - __archspec=0=x86_64
 environments:
   default:
     channels:
@@ -13,6 +18,7 @@ environments:
       - conda: https://conda.anaconda.org/bioconda/linux-64/bedtools-2.31.1-h13024bc_3.tar.bz2
       - conda: https://conda.anaconda.org/bioconda/linux-64/cutadapt-5.2-py312h0fa9677_0.conda
       - conda: https://conda.anaconda.org/bioconda/linux-64/dnaio-1.2.2-py312hf67a6ed_0.tar.bz2
+      - conda: https://conda.anaconda.org/bioconda/linux-64/hisat2-2.2.2-h503566f_0.conda
       - conda: https://conda.anaconda.org/bioconda/linux-64/htslib-1.22.1-h566b1c6_0.tar.bz2
       - conda: https://conda.anaconda.org/bioconda/linux-64/ncbi-vdb-3.2.1-h9948957_0.tar.bz2
       - conda: https://conda.anaconda.org/bioconda/linux-64/perl-alien-build-2.84-pl5321h7b50bb2_1.tar.bz2
@@ -20,7 +26,6 @@ environments:
       - conda: https://conda.anaconda.org/bioconda/linux-64/perl-xml-libxml-2.0210-pl5321hd2ab53c_1.tar.bz2
       - conda: https://conda.anaconda.org/bioconda/linux-64/samtools-1.22.1-h96c455f_0.tar.bz2
       - conda: https://conda.anaconda.org/bioconda/linux-64/sra-tools-3.2.1-h4304569_1.tar.bz2
-      - conda: https://conda.anaconda.org/bioconda/linux-64/star-2.7.11b-h5ca1c30_7.tar.bz2
       - conda: https://conda.anaconda.org/bioconda/linux-64/stringtie-3.0.2-h29c0135_0.conda
       - conda: https://conda.anaconda.org/bioconda/noarch/fastqc-0.12.1-hdfd78af_0.tar.bz2
       - conda: https://conda.anaconda.org/bioconda/noarch/perl-alien-build-plugin-download-gitlab-0.01-pl5321hdfd78af_0.tar.bz2
@@ -243,6 +248,22 @@ packages:
   - pkg:pypi/dnaio?source=hash-mapping
   size: 153171
   timestamp: 1728030401542
+- conda: https://conda.anaconda.org/bioconda/linux-64/hisat2-2.2.2-h503566f_0.conda
+  sha256: 406c7fcfd48ade565e204144ddf908d7b7ec79e9ebf0f9d454734b6f26c07ef9
+  md5: 5f076a8f52c2e67ed5ff65b9146397b8
+  depends:
+  - libgcc >=13
+  - libstdcxx >=13
+  - perl
+  - python >3.5
+  license: GPL-3.0
+  license_family: GPL
+  purls: []
+  run_exports:
+    weak:
+    - hisat2 >=2.2.2,<3.0a0
+  size: 12538525
+  timestamp: 1769542213562
 - conda: https://conda.anaconda.org/bioconda/linux-64/htslib-1.22.1-h566b1c6_0.tar.bz2
   sha256: 858e634fea447555dcf9725c6533ec7e0f345cb74b53d0d6c99f0ff9575924a1
   md5: 646b491ab86e0ab7173d35eb3a5f3241
@@ -351,22 +372,6 @@ packages:
   purls: []
   size: 64003013
   timestamp: 1750275321138
-- conda: https://conda.anaconda.org/bioconda/linux-64/star-2.7.11b-h5ca1c30_7.tar.bz2
-  sha256: 2afa23bc66ce51c7828ae84356ce886745fee73ec1b6553a5b1504fac4f4733f
-  md5: 8d34a330e94dfb131b5841753d4335a5
-  depends:
-  - _openmp_mutex >=4.5
-  - htslib >=1.21
-  - htslib >=1.22.1,<1.23.0a0
-  - libgcc >=13
-  - libgomp
-  - libstdcxx >=13
-  - libzlib >=1.3.1,<2.0a0
-  license: GPL-3.0-or-later
-  license_family: GPL3
-  purls: []
-  size: 9360244
-  timestamp: 1753326934900
 - conda: https://conda.anaconda.org/bioconda/linux-64/stringtie-3.0.2-h29c0135_0.conda
   sha256: e6350f54846a52eeec0c743373ed500ae49e5c542f65bcf9dc2778f33e69710f
   md5: 12fdaefab9f8f356c0eb4afcd24e2543

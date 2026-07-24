@@ -7,7 +7,7 @@ version = "0.1.0"
 [tasks]
 
 [dependencies]
-star = "*"
+hisat2 = "*"
 trim-galore = "*"
 samtools = "*"
 bedtools = "*"

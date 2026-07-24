@@ -1,14 +1,20 @@
 [workspace]
 authors = ["RafailTn <rafailadam46@gmail.com>"]
-channels = ["conda-forge", "bioconda"]
+channels = ["conda-forge", "bioconda", "nvidia"]
 name = "scrna"
-platforms = ["linux-64"]
+# RTX 5060 Mobile is Blackwell (sm_120) — needs CUDA 12.8+ toolkit/driver.
+# Declaring cuda here (new pixi syntax, replaces [system-requirements])
+# tells the solver what the machine actually has.
+platforms = [{ platform = "linux-64", cuda = "12.8" }]
 version = "0.1.0"
 
 [tasks]
 
 [dependencies]
-python = "*"
+python = ">=3.11,<3.13"
+numpy = ">=2,<3"  # pinned explicitly — something else in the conda tree was otherwise dragging
+                  # this back to 1.26.x, which snapatac2>=2.9 refuses (needs numpy>=2.0.0,<3.0.0)
+pandas = ">=2.2.0,<3"  # snapatac2 caps pandas<3.0.0; conda had solved to the new 3.0.x line
 alevin-fry = "*"
 simpleaf = "*"
 scvelo = ">=0.3.3,<0.4"
@@ -18,7 +24,28 @@ cellrank = ">=2.0.7,<3"
 scvi-tools = ">=1.4.1,<2"
 harmonypy = ">=0.2.0,<0.3"
 muon = ">=0.1.7,<0.2"
-macs3 = ">=3.0.3,<4"
+macs3 = ">=3.0.3,<3.1"  # snapatac2's pypi metadata requires macs3<3.1 — stay inside that window
+                        # so uv recognizes this conda-installed macs3 as already satisfying it,
+                        # instead of trying to fetch+build its own from a PyPI sdist (which fails
+                        # to compile against modern Cython).
+
+# --- GPU / PyTorch ---
+# Pinned explicitly (rather than left to scvi-tools to pull in) so
+# torch-geometric/captum on the pypi side get a matching build.
+pytorch-gpu = ">=2.7,<3"
+cuda-version = "12.8.*"
+
+# --- scATAC / multiome upstream (raw reads -> fragments -> peaks) ---
+chromap = "*"          # alignment + fragment-file generation for scATAC/multiome
+sinto = "*"            # alternative/complementary fragment-file utilities
+bedtools = "*"         # interval ops, useful with macs3 peaks + TE overlap work
+pysam = "*"            # BAM/CRAM handling
+samtools = "*"
+
+# --- long-read / isoform-resolved single-cell ---
+bioconductor-flames = "*"   # ONT long-read scRNA: barcode extraction, isoform discovery/quantification
+pyfaidx = ">=0.7.0,<0.9.0"  # pinned to the window snapatac2 requires — flames (or another dep) was
+                            # produced by the separate hic env; full Hi-C analysis stack lives there
 
 [pypi-dependencies]
 scanpy = "*"
@@ -29,5 +56,7 @@ polars = "*"
 pynvim = "*"
 ipykernel = "*"
 torch-geometric = ">=2.7.0, <3"
-captum = ">=0.8.0, <0.9"
-snapatac2 = ">=2.4.0, <3"
+captum = ">=0.9.0, <1"
+snapatac2 = ">=2.9,<3"  # narrowed to the 2.9 line specifically — 2.7.x/2.8.0 want pyfaidx<0.8.0,
+                        # which conflicts with the >=2.9 numpy>=2.0 requirement elsewhere in the tree
+pertpy = "*"
